@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/jago270816/backend-lavanderia/issues"
   },
-  "homepage": "https://github.com/jago270816/backend-lavanderia#readme"
+  "homepage": "https://github.com/jago270816/backend-lavanderia#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.5"
+  }
 }
