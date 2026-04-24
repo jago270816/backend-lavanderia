@@ -6,6 +6,10 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 
+app.get("/", (req, res) => {
+  res.send("Servidor de lavandería funcionando 🚀");
+});
+
 // Configurar correo (Gmail ejemplo)
 const transporter = nodemailer.createTransport({
   service: "gmail",
