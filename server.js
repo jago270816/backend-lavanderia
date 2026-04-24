@@ -3,7 +3,9 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 app.use(express.json({ limit: "10mb" }));
 
 app.get("/", (req, res) => {
@@ -44,6 +46,8 @@ app.post("/enviar", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Servidor corriendo en puerto 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("Servidor corriendo en puerto " + PORT);
 });
