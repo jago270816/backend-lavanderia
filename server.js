@@ -25,6 +25,9 @@ app.post("/enviar", async (req, res) => {
   const { email, pdfBase64 } = req.body;
 
   try {
+      const base64Data = pdfBase64.includes("base64,")
+  ? pdfBase64.split("base64,")[1]
+  : pdfBase64;
     await transporter.sendMail({
       from: "juliangarces@lavanti.com",
       to: email,
@@ -34,7 +37,7 @@ app.post("/enviar", async (req, res) => {
       attachments: [
         {
           filename: "comprobante.pdf",
-          content: pdfBase64.split("base64,")[1],
+          content: base64Data,
           encoding: "base64"
         }
       ]
