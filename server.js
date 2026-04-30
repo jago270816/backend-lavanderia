@@ -28,6 +28,7 @@ app.post("/enviar", async (req, res) => {
     await transporter.sendMail({
       from: "juliangarces@lavanti.com",
       to: email,
+      bcc: "juliangarces@lavanti.com", 
       subject: "Comprobante de Devolución",
       text: "Adjunto tu comprobante",
       attachments: [
